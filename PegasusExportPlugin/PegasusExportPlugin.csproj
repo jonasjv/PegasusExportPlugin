@@ -38,9 +38,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Drawing.Common">
-      <HintPath>..\..\..\..\LaunchBox\Metadata\System.Drawing.Common.dll</HintPath>
-    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,15 +47,15 @@
     <Reference Include="System.Xml" />
     <Reference Include="Unbroken, Version=11.8.0.0, Culture=neutral, PublicKeyToken=97d6238f04304129, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\LaunchBox\Core\Unbroken.dll</HintPath>
+      <HintPath>E:\Jogos\LaunchBox\Core\Unbroken.dll</HintPath>
     </Reference>
     <Reference Include="Unbroken.LaunchBox, Version=11.8.0.0, Culture=neutral, PublicKeyToken=97d6238f04304129, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\LaunchBox\Core\Unbroken.LaunchBox.dll</HintPath>
+      <HintPath>E:\Jogos\LaunchBox\Core\Unbroken.LaunchBox.dll</HintPath>
     </Reference>
     <Reference Include="Unbroken.LaunchBox.Plugins, Version=11.8.0.0, Culture=neutral, PublicKeyToken=558191e84f56affc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\LaunchBox\Core\Unbroken.LaunchBox.Plugins.dll</HintPath>
+      <HintPath>E:\Jogos\LaunchBox\Core\Unbroken.LaunchBox.Plugins.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -109,7 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Drawing.Common">
-      <Version>4.7.0</Version>
+      <Version>5.0.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

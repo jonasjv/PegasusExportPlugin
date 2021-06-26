@@ -30,7 +30,6 @@
         {
             this.btnExport = new System.Windows.Forms.Button();
             this.fbdExportFolder = new System.Windows.Forms.FolderBrowserDialog();
-            this.txtExportPath = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.progressBar = new System.Windows.Forms.ProgressBar();
@@ -43,7 +42,14 @@
             this.btnDown = new System.Windows.Forms.Button();
             this.radChoose = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpExternalMedia = new System.Windows.Forms.GroupBox();
+            this.txtMediaPath = new System.Windows.Forms.MaskedTextBox();
+            this.chkUseExternalMedia = new System.Windows.Forms.CheckBox();
+            this.btnBrowseExternalMedia = new System.Windows.Forms.Button();
             this.gbAssetPath = new System.Windows.Forms.GroupBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.radAssetsBackslashWindows = new System.Windows.Forms.RadioButton();
+            this.radAssetsBackslashLinux = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radAbsoluteAssets = new System.Windows.Forms.RadioButton();
             this.radLinkAssets = new System.Windows.Forms.RadioButton();
@@ -51,34 +57,50 @@
             this.clbAssetList = new System.Windows.Forms.CheckedListBox();
             this.radAutoChoose = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkSingleExport = new System.Windows.Forms.CheckBox();
             this.dgvPlatforms = new System.Windows.Forms.DataGridView();
             this.colSelected = new PegasusExportPlugin.Controls.DataGridViewHeaderCheckBoxColumn();
             this.colPlatform = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMetaData = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colAssets = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colApplication = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewHeaderCheckBoxColumn1 = new PegasusExportPlugin.Controls.DataGridViewHeaderCheckBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dgvPlaylists = new System.Windows.Forms.DataGridView();
             this.colSelected2 = new PegasusExportPlugin.Controls.DataGridViewHeaderCheckBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn12 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.gbApplicationPath = new System.Windows.Forms.GroupBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.radApplicationBackslashWindows = new System.Windows.Forms.RadioButton();
+            this.radApplicationBackslashLinux = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radAbsoluteApplication = new System.Windows.Forms.RadioButton();
             this.radLinkApplication = new System.Windows.Forms.RadioButton();
             this.radCopyApplication = new System.Windows.Forms.RadioButton();
-            this.chkSingleExport = new System.Windows.Forms.CheckBox();
+            this.txtExportPath = new System.Windows.Forms.MaskedTextBox();
+            this.fdbExportExternalMedia = new System.Windows.Forms.FolderBrowserDialog();
+            this.dataGridViewHeaderCheckBoxColumn1 = new PegasusExportPlugin.Controls.DataGridViewHeaderCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewHeaderCheckBoxColumn2 = new PegasusExportPlugin.Controls.DataGridViewHeaderCheckBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colSelected21 = new PegasusExportPlugin.Controls.DataGridViewHeaderCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.grpExternalMedia.SuspendLayout();
             this.gbAssetPath.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlatforms)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -88,29 +110,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaylists)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.gbApplicationPath.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExport
             // 
             this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExport.Location = new System.Drawing.Point(12, 631);
+            this.btnExport.Location = new System.Drawing.Point(12, 748);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(770, 23);
+            this.btnExport.Size = new System.Drawing.Size(775, 23);
             this.btnExport.TabIndex = 0;
             this.btnExport.Text = "&Export";
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.BtnExport_Click);
-            // 
-            // txtExportPath
-            // 
-            this.txtExportPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtExportPath.Location = new System.Drawing.Point(90, 12);
-            this.txtExportPath.Name = "txtExportPath";
-            this.txtExportPath.ReadOnly = true;
-            this.txtExportPath.Size = new System.Drawing.Size(611, 20);
-            this.txtExportPath.TabIndex = 1;
             // 
             // label1
             // 
@@ -124,7 +137,7 @@
             // btnBrowse
             // 
             this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBrowse.Location = new System.Drawing.Point(707, 10);
+            this.btnBrowse.Location = new System.Drawing.Point(712, 10);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnBrowse.TabIndex = 3;
@@ -136,9 +149,9 @@
             // 
             this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar.Location = new System.Drawing.Point(12, 602);
+            this.progressBar.Location = new System.Drawing.Point(12, 719);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(770, 23);
+            this.progressBar.Size = new System.Drawing.Size(775, 23);
             this.progressBar.TabIndex = 4;
             // 
             // chkMetaData
@@ -186,7 +199,7 @@
             this.groupBox1.Controls.Add(this.btnDown);
             this.groupBox1.Location = new System.Drawing.Point(438, 352);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(211, 197);
+            this.groupBox1.Size = new System.Drawing.Size(211, 314);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Box Art Priority";
@@ -215,7 +228,7 @@
             "Larger File Size"});
             this.lbImagePriority.Location = new System.Drawing.Point(12, 48);
             this.lbImagePriority.Name = "lbImagePriority";
-            this.lbImagePriority.Size = new System.Drawing.Size(188, 134);
+            this.lbImagePriority.Size = new System.Drawing.Size(188, 238);
             this.lbImagePriority.TabIndex = 10;
             // 
             // btnDown
@@ -244,27 +257,116 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.grpExternalMedia);
             this.groupBox2.Controls.Add(this.gbAssetPath);
             this.groupBox2.Controls.Add(this.radLinkAssets);
             this.groupBox2.Controls.Add(this.radCopyAssets);
             this.groupBox2.Controls.Add(this.clbAssetList);
             this.groupBox2.Location = new System.Drawing.Point(9, 352);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(290, 197);
+            this.groupBox2.Size = new System.Drawing.Size(290, 314);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Asset Export";
             // 
+            // grpExternalMedia
+            // 
+            this.grpExternalMedia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpExternalMedia.Controls.Add(this.txtMediaPath);
+            this.grpExternalMedia.Controls.Add(this.chkUseExternalMedia);
+            this.grpExternalMedia.Controls.Add(this.btnBrowseExternalMedia);
+            this.grpExternalMedia.Location = new System.Drawing.Point(6, 217);
+            this.grpExternalMedia.Name = "grpExternalMedia";
+            this.grpExternalMedia.Size = new System.Drawing.Size(278, 78);
+            this.grpExternalMedia.TabIndex = 18;
+            this.grpExternalMedia.TabStop = false;
+            this.grpExternalMedia.Text = "External media";
+            // 
+            // txtMediaPath
+            // 
+            this.txtMediaPath.BackColor = System.Drawing.SystemColors.Control;
+            this.txtMediaPath.Enabled = false;
+            this.txtMediaPath.Location = new System.Drawing.Point(5, 48);
+            this.txtMediaPath.Name = "txtMediaPath";
+            this.txtMediaPath.Size = new System.Drawing.Size(270, 20);
+            this.txtMediaPath.TabIndex = 20;
+            // 
+            // chkUseExternalMedia
+            // 
+            this.chkUseExternalMedia.AutoSize = true;
+            this.chkUseExternalMedia.Location = new System.Drawing.Point(6, 23);
+            this.chkUseExternalMedia.Name = "chkUseExternalMedia";
+            this.chkUseExternalMedia.Size = new System.Drawing.Size(118, 17);
+            this.chkUseExternalMedia.TabIndex = 19;
+            this.chkUseExternalMedia.Text = "Use External Media";
+            this.chkUseExternalMedia.UseVisualStyleBackColor = true;
+            this.chkUseExternalMedia.CheckedChanged += new System.EventHandler(this.chkUseExternalMedia_CheckedChanged);
+            // 
+            // btnBrowseExternalMedia
+            // 
+            this.btnBrowseExternalMedia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBrowseExternalMedia.Enabled = false;
+            this.btnBrowseExternalMedia.Location = new System.Drawing.Point(197, 19);
+            this.btnBrowseExternalMedia.Name = "btnBrowseExternalMedia";
+            this.btnBrowseExternalMedia.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowseExternalMedia.TabIndex = 18;
+            this.btnBrowseExternalMedia.Text = "&Browse";
+            this.btnBrowseExternalMedia.UseVisualStyleBackColor = true;
+            this.btnBrowseExternalMedia.Click += new System.EventHandler(this.btnBrowseExternalMedia_Click);
+            // 
             // gbAssetPath
             // 
+            this.gbAssetPath.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbAssetPath.Controls.Add(this.groupBox9);
             this.gbAssetPath.Controls.Add(this.radioButton3);
             this.gbAssetPath.Controls.Add(this.radAbsoluteAssets);
             this.gbAssetPath.Location = new System.Drawing.Point(177, 62);
             this.gbAssetPath.Name = "gbAssetPath";
-            this.gbAssetPath.Size = new System.Drawing.Size(107, 68);
+            this.gbAssetPath.Size = new System.Drawing.Size(107, 145);
             this.gbAssetPath.TabIndex = 6;
             this.gbAssetPath.TabStop = false;
             this.gbAssetPath.Text = "Path";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox9.Controls.Add(this.radAssetsBackslashWindows);
+            this.groupBox9.Controls.Add(this.radAssetsBackslashLinux);
+            this.groupBox9.Location = new System.Drawing.Point(7, 65);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(94, 74);
+            this.groupBox9.TabIndex = 17;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Backslash";
+            // 
+            // radAssetsBackslashWindows
+            // 
+            this.radAssetsBackslashWindows.AutoSize = true;
+            this.radAssetsBackslashWindows.Checked = true;
+            this.radAssetsBackslashWindows.Enabled = false;
+            this.radAssetsBackslashWindows.Location = new System.Drawing.Point(8, 19);
+            this.radAssetsBackslashWindows.Name = "radAssetsBackslashWindows";
+            this.radAssetsBackslashWindows.Size = new System.Drawing.Size(69, 17);
+            this.radAssetsBackslashWindows.TabIndex = 13;
+            this.radAssetsBackslashWindows.TabStop = true;
+            this.radAssetsBackslashWindows.Text = "Windows";
+            this.radAssetsBackslashWindows.UseVisualStyleBackColor = true;
+            // 
+            // radAssetsBackslashLinux
+            // 
+            this.radAssetsBackslashLinux.AutoSize = true;
+            this.radAssetsBackslashLinux.Enabled = false;
+            this.radAssetsBackslashLinux.Location = new System.Drawing.Point(8, 42);
+            this.radAssetsBackslashLinux.Name = "radAssetsBackslashLinux";
+            this.radAssetsBackslashLinux.Size = new System.Drawing.Size(50, 17);
+            this.radAssetsBackslashLinux.TabIndex = 10;
+            this.radAssetsBackslashLinux.Text = "Linux";
+            this.radAssetsBackslashLinux.UseVisualStyleBackColor = true;
             // 
             // radioButton3
             // 
@@ -289,6 +391,7 @@
             this.radAbsoluteAssets.TabStop = true;
             this.radAbsoluteAssets.Text = "Absolute";
             this.radAbsoluteAssets.UseVisualStyleBackColor = true;
+            this.radAbsoluteAssets.CheckedChanged += new System.EventHandler(this.radAbsoluteAssets_CheckedChanged);
             // 
             // radLinkAssets
             // 
@@ -312,6 +415,7 @@
             this.radCopyAssets.TabStop = true;
             this.radCopyAssets.Text = "Copy Assets";
             this.radCopyAssets.UseVisualStyleBackColor = true;
+            this.radCopyAssets.CheckedChanged += new System.EventHandler(this.radCopyAssets_CheckedChanged);
             // 
             // clbAssetList
             // 
@@ -320,9 +424,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clbAssetList.CheckOnClick = true;
             this.clbAssetList.FormattingEnabled = true;
-            this.clbAssetList.Location = new System.Drawing.Point(3, 16);
+            this.clbAssetList.Location = new System.Drawing.Point(3, 22);
             this.clbAssetList.Name = "clbAssetList";
-            this.clbAssetList.Size = new System.Drawing.Size(168, 154);
+            this.clbAssetList.Size = new System.Drawing.Size(168, 184);
             this.clbAssetList.TabIndex = 0;
             // 
             // radAutoChoose
@@ -349,6 +453,18 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Duplicate Assets";
             // 
+            // chkSingleExport
+            // 
+            this.chkSingleExport.AutoSize = true;
+            this.chkSingleExport.Checked = true;
+            this.chkSingleExport.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkSingleExport.Location = new System.Drawing.Point(6, 65);
+            this.chkSingleExport.Name = "chkSingleExport";
+            this.chkSingleExport.Size = new System.Drawing.Size(88, 17);
+            this.chkSingleExport.TabIndex = 14;
+            this.chkSingleExport.Text = "Single Export";
+            this.chkSingleExport.UseVisualStyleBackColor = true;
+            // 
             // dgvPlatforms
             // 
             this.dgvPlatforms.AllowUserToAddRows = false;
@@ -370,7 +486,7 @@
             this.dgvPlatforms.RowHeadersVisible = false;
             this.dgvPlatforms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect;
             this.dgvPlatforms.ShowEditingIcon = false;
-            this.dgvPlatforms.Size = new System.Drawing.Size(750, 119);
+            this.dgvPlatforms.Size = new System.Drawing.Size(755, 119);
             this.dgvPlatforms.TabIndex = 13;
             // 
             // colSelected
@@ -419,23 +535,6 @@
             this.colApplication.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colApplication.Width = 65;
             // 
-            // dataGridViewHeaderCheckBoxColumn1
-            // 
-            this.dataGridViewHeaderCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewHeaderCheckBoxColumn1.HeaderCheckBox = true;
-            this.dataGridViewHeaderCheckBoxColumn1.HeaderText = "";
-            this.dataGridViewHeaderCheckBoxColumn1.MinimumWidth = 20;
-            this.dataGridViewHeaderCheckBoxColumn1.Name = "dataGridViewHeaderCheckBoxColumn1";
-            this.dataGridViewHeaderCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewHeaderCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewHeaderCheckBoxColumn1.Width = 20;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Platform";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -443,7 +542,7 @@
             this.groupBox4.Controls.Add(this.dgvPlatforms);
             this.groupBox4.Location = new System.Drawing.Point(3, 53);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(764, 149);
+            this.groupBox4.Size = new System.Drawing.Size(769, 149);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Platform Export Options";
@@ -455,7 +554,7 @@
             this.groupBox5.Controls.Add(this.chkApplication);
             this.groupBox5.Location = new System.Drawing.Point(3, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(429, 44);
+            this.groupBox5.Size = new System.Drawing.Size(764, 44);
             this.groupBox5.TabIndex = 13;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Global Override Settings";
@@ -475,7 +574,7 @@
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Location = new System.Drawing.Point(12, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(770, 557);
+            this.panel1.Size = new System.Drawing.Size(775, 674);
             this.panel1.TabIndex = 14;
             // 
             // groupBox7
@@ -485,7 +584,7 @@
             this.groupBox7.Controls.Add(this.dgvPlaylists);
             this.groupBox7.Location = new System.Drawing.Point(3, 191);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(764, 149);
+            this.groupBox7.Size = new System.Drawing.Size(769, 149);
             this.groupBox7.TabIndex = 15;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Playlist Export Options";
@@ -502,17 +601,17 @@
             this.dgvPlaylists.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlaylists.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSelected2,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewCheckBoxColumn2,
-            this.dataGridViewCheckBoxColumn3});
-            this.dgvPlaylists.Location = new System.Drawing.Point(8, 19);
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewCheckBoxColumn10,
+            this.dataGridViewCheckBoxColumn11,
+            this.dataGridViewCheckBoxColumn12});
+            this.dgvPlaylists.Location = new System.Drawing.Point(7, 15);
             this.dgvPlaylists.Name = "dgvPlaylists";
             this.dgvPlaylists.RowHeadersVisible = false;
             this.dgvPlaylists.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect;
             this.dgvPlaylists.ShowEditingIcon = false;
-            this.dgvPlaylists.Size = new System.Drawing.Size(750, 119);
-            this.dgvPlaylists.TabIndex = 13;
+            this.dgvPlaylists.Size = new System.Drawing.Size(755, 119);
+            this.dgvPlaylists.TabIndex = 15;
             // 
             // colSelected2
             // 
@@ -525,40 +624,40 @@
             this.colSelected2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colSelected2.Width = 20;
             // 
-            // dataGridViewTextBoxColumn2
+            // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Playlist";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Playlist";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewCheckBoxColumn1
+            // dataGridViewCheckBoxColumn10
             // 
-            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "ExportMetadata";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Metadata";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn1.Width = 58;
+            this.dataGridViewCheckBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewCheckBoxColumn10.DataPropertyName = "ExportMetadata";
+            this.dataGridViewCheckBoxColumn10.HeaderText = "Metadata";
+            this.dataGridViewCheckBoxColumn10.Name = "dataGridViewCheckBoxColumn10";
+            this.dataGridViewCheckBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn10.Width = 58;
             // 
-            // dataGridViewCheckBoxColumn2
+            // dataGridViewCheckBoxColumn11
             // 
-            this.dataGridViewCheckBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "ExportAssets";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "Assets";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn2.Width = 44;
+            this.dataGridViewCheckBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewCheckBoxColumn11.DataPropertyName = "ExportAssets";
+            this.dataGridViewCheckBoxColumn11.HeaderText = "Assets";
+            this.dataGridViewCheckBoxColumn11.Name = "dataGridViewCheckBoxColumn11";
+            this.dataGridViewCheckBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn11.Width = 44;
             // 
-            // dataGridViewCheckBoxColumn3
+            // dataGridViewCheckBoxColumn12
             // 
-            this.dataGridViewCheckBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewCheckBoxColumn3.DataPropertyName = "ExportApplication";
-            this.dataGridViewCheckBoxColumn3.HeaderText = "Application";
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn3.Width = 65;
+            this.dataGridViewCheckBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewCheckBoxColumn12.DataPropertyName = "ExportApplication";
+            this.dataGridViewCheckBoxColumn12.HeaderText = "Application";
+            this.dataGridViewCheckBoxColumn12.Name = "dataGridViewCheckBoxColumn12";
+            this.dataGridViewCheckBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn12.Width = 65;
             // 
             // groupBox6
             // 
@@ -569,21 +668,57 @@
             this.groupBox6.Controls.Add(this.radCopyApplication);
             this.groupBox6.Location = new System.Drawing.Point(305, 352);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(127, 197);
+            this.groupBox6.Size = new System.Drawing.Size(127, 314);
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Application Export";
             // 
             // gbApplicationPath
             // 
+            this.gbApplicationPath.Controls.Add(this.groupBox10);
             this.gbApplicationPath.Controls.Add(this.radioButton2);
             this.gbApplicationPath.Controls.Add(this.radAbsoluteApplication);
             this.gbApplicationPath.Location = new System.Drawing.Point(6, 62);
             this.gbApplicationPath.Name = "gbApplicationPath";
-            this.gbApplicationPath.Size = new System.Drawing.Size(115, 68);
+            this.gbApplicationPath.Size = new System.Drawing.Size(115, 222);
             this.gbApplicationPath.TabIndex = 5;
             this.gbApplicationPath.TabStop = false;
             this.gbApplicationPath.Text = "Path";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.radApplicationBackslashWindows);
+            this.groupBox10.Controls.Add(this.radApplicationBackslashLinux);
+            this.groupBox10.Location = new System.Drawing.Point(10, 67);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(94, 65);
+            this.groupBox10.TabIndex = 18;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Backslash";
+            // 
+            // radApplicationBackslashWindows
+            // 
+            this.radApplicationBackslashWindows.AutoSize = true;
+            this.radApplicationBackslashWindows.Checked = true;
+            this.radApplicationBackslashWindows.Enabled = false;
+            this.radApplicationBackslashWindows.Location = new System.Drawing.Point(8, 19);
+            this.radApplicationBackslashWindows.Name = "radApplicationBackslashWindows";
+            this.radApplicationBackslashWindows.Size = new System.Drawing.Size(69, 17);
+            this.radApplicationBackslashWindows.TabIndex = 13;
+            this.radApplicationBackslashWindows.TabStop = true;
+            this.radApplicationBackslashWindows.Text = "Windows";
+            this.radApplicationBackslashWindows.UseVisualStyleBackColor = true;
+            // 
+            // radApplicationBackslashLinux
+            // 
+            this.radApplicationBackslashLinux.AutoSize = true;
+            this.radApplicationBackslashLinux.Enabled = false;
+            this.radApplicationBackslashLinux.Location = new System.Drawing.Point(8, 42);
+            this.radApplicationBackslashLinux.Name = "radApplicationBackslashLinux";
+            this.radApplicationBackslashLinux.Size = new System.Drawing.Size(50, 17);
+            this.radApplicationBackslashLinux.TabIndex = 10;
+            this.radApplicationBackslashLinux.Text = "Linux";
+            this.radApplicationBackslashLinux.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
@@ -608,6 +743,7 @@
             this.radAbsoluteApplication.TabStop = true;
             this.radAbsoluteApplication.Text = "Absolute.";
             this.radAbsoluteApplication.UseVisualStyleBackColor = true;
+            this.radAbsoluteApplication.CheckedChanged += new System.EventHandler(this.radAbsoluteApplication_CheckedChanged);
             // 
             // radLinkApplication
             // 
@@ -632,23 +768,120 @@
             this.radCopyApplication.Text = "Copy Application";
             this.radCopyApplication.UseVisualStyleBackColor = true;
             // 
-            // chkSingleExport
+            // txtExportPath
             // 
-            this.chkSingleExport.AutoSize = true;
-            this.chkSingleExport.Checked = true;
-            this.chkSingleExport.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkSingleExport.Location = new System.Drawing.Point(6, 65);
-            this.chkSingleExport.Name = "chkSingleExport";
-            this.chkSingleExport.Size = new System.Drawing.Size(88, 17);
-            this.chkSingleExport.TabIndex = 14;
-            this.chkSingleExport.Text = "Single Export";
-            this.chkSingleExport.UseVisualStyleBackColor = true;
+            this.txtExportPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtExportPath.Location = new System.Drawing.Point(90, 12);
+            this.txtExportPath.Name = "txtExportPath";
+            this.txtExportPath.ReadOnly = true;
+            this.txtExportPath.Size = new System.Drawing.Size(616, 20);
+            this.txtExportPath.TabIndex = 1;
+            // 
+            // dataGridViewHeaderCheckBoxColumn1
+            // 
+            this.dataGridViewHeaderCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewHeaderCheckBoxColumn1.DataPropertyName = "Selected";
+            this.dataGridViewHeaderCheckBoxColumn1.HeaderCheckBox = true;
+            this.dataGridViewHeaderCheckBoxColumn1.HeaderText = "";
+            this.dataGridViewHeaderCheckBoxColumn1.MinimumWidth = 20;
+            this.dataGridViewHeaderCheckBoxColumn1.Name = "dataGridViewHeaderCheckBoxColumn1";
+            this.dataGridViewHeaderCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewHeaderCheckBoxColumn1.Width = 20;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Platform";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Width = 560;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "ExportMetadata";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Metadata";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "ExportAssets";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Assets";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewCheckBoxColumn3.DataPropertyName = "ExportApplication";
+            this.dataGridViewCheckBoxColumn3.HeaderText = "Application";
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            this.dataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewHeaderCheckBoxColumn2
+            // 
+            this.dataGridViewHeaderCheckBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewHeaderCheckBoxColumn2.DataPropertyName = "Selected";
+            this.dataGridViewHeaderCheckBoxColumn2.HeaderCheckBox = true;
+            this.dataGridViewHeaderCheckBoxColumn2.HeaderText = "";
+            this.dataGridViewHeaderCheckBoxColumn2.MinimumWidth = 20;
+            this.dataGridViewHeaderCheckBoxColumn2.Name = "dataGridViewHeaderCheckBoxColumn2";
+            this.dataGridViewHeaderCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewHeaderCheckBoxColumn2.Width = 20;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Playlist";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn2.Width = 560;
+            // 
+            // dataGridViewCheckBoxColumn4
+            // 
+            this.dataGridViewCheckBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewCheckBoxColumn4.DataPropertyName = "ExportMetadata";
+            this.dataGridViewCheckBoxColumn4.HeaderText = "Metadata";
+            this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
+            this.dataGridViewCheckBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewCheckBoxColumn5
+            // 
+            this.dataGridViewCheckBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewCheckBoxColumn5.DataPropertyName = "ExportAssets";
+            this.dataGridViewCheckBoxColumn5.HeaderText = "Assets";
+            this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
+            this.dataGridViewCheckBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewCheckBoxColumn6
+            // 
+            this.dataGridViewCheckBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewCheckBoxColumn6.DataPropertyName = "ExportApplication";
+            this.dataGridViewCheckBoxColumn6.HeaderText = "Application";
+            this.dataGridViewCheckBoxColumn6.Name = "dataGridViewCheckBoxColumn6";
+            this.dataGridViewCheckBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colSelected21
+            // 
+            this.colSelected21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colSelected21.DataPropertyName = "Selected";
+            this.colSelected21.HeaderCheckBox = true;
+            this.colSelected21.HeaderText = "";
+            this.colSelected21.MinimumWidth = 20;
+            this.colSelected21.Name = "colSelected21";
+            this.colSelected21.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSelected21.Width = 20;
             // 
             // frmPegasusExport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 666);
+            this.ClientSize = new System.Drawing.Size(799, 783);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.btnBrowse);
@@ -664,8 +897,12 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.grpExternalMedia.ResumeLayout(false);
+            this.grpExternalMedia.PerformLayout();
             this.gbAssetPath.ResumeLayout(false);
             this.gbAssetPath.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlatforms)).EndInit();
@@ -679,6 +916,8 @@
             this.groupBox6.PerformLayout();
             this.gbApplicationPath.ResumeLayout(false);
             this.gbApplicationPath.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -688,7 +927,6 @@
 
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.FolderBrowserDialog fbdExportFolder;
-        private System.Windows.Forms.MaskedTextBox txtExportPath;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.ProgressBar progressBar;
@@ -727,12 +965,33 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radAbsoluteApplication;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.DataGridView dgvPlaylists;
-        private Controls.DataGridViewHeaderCheckBoxColumn colSelected2;
+        private Controls.DataGridViewHeaderCheckBoxColumn colSelected21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
         private System.Windows.Forms.CheckBox chkSingleExport;
+        private System.Windows.Forms.MaskedTextBox txtExportPath;
+        private System.Windows.Forms.GroupBox grpExternalMedia;
+        private System.Windows.Forms.MaskedTextBox txtMediaPath;
+        private System.Windows.Forms.CheckBox chkUseExternalMedia;
+        private System.Windows.Forms.Button btnBrowseExternalMedia;
+        private System.Windows.Forms.FolderBrowserDialog fdbExportExternalMedia;
+        private Controls.DataGridViewHeaderCheckBoxColumn dataGridViewHeaderCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn5;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn6;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.RadioButton radAssetsBackslashWindows;
+        private System.Windows.Forms.RadioButton radAssetsBackslashLinux;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.RadioButton radApplicationBackslashWindows;
+        private System.Windows.Forms.RadioButton radApplicationBackslashLinux;
+        private System.Windows.Forms.DataGridView dgvPlaylists;
+        private Controls.DataGridViewHeaderCheckBoxColumn colSelected2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn10;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn11;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn12;
     }
 }
